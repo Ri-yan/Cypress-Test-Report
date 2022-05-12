@@ -32,7 +32,7 @@ jobs:
       #     cp -r cypress/screenshots public/screenshots
 
       - name: Merge test results into one
-        run: npm run combine:report
+        run: npm run report:merge
 
       - name: Generate HTML report
         run: npm run generate:report
