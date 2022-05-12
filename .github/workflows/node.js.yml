@@ -8,10 +8,11 @@ on:
     branches: [ main ]
   
 jobs:
-  cypress-test:
-    name: Run on Chrome 100
+
+ cypress-e2e-chrome81:
+    name: Run on Chrome 81
     runs-on: ubuntu-18.04
-    container: cypress/browsers:node14.17.6-slim-chrome100-ff99-edge
+    container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
 
@@ -24,11 +25,11 @@ jobs:
         run: npm run test:chrome
         continue-on-error: true
 
-      # - name: Copy test execution videos and screenshots
-      #   run: |
-      #     mkdir public
-      #     cp -r cypress/videos public/videos
-      #     cp -r cypress/screenshots public/screenshots
+      - name: Copy test execution videos and screenshots
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+          cp -r cypress/screenshots public/screenshots
 
       - name: Merge test results into one
         run: npm run combine:report
