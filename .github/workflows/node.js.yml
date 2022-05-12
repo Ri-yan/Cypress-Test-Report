@@ -11,9 +11,9 @@ on:
 
 jobs:
   cypress-test:
-    name: Run on Chrome 83
+    name: Run on Chrome 100
     runs-on: ubuntu-18.04
-    container: cypress/browsers:node12.18.0-chrome81-ff77
+    container: cypress/browsers:node14.17.6-slim-chrome100-ff99-edge
     steps:
       - uses: actions/checkout@v2
 
