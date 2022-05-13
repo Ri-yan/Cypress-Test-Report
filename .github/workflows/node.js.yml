@@ -11,7 +11,7 @@ jobs:
 
  cypress-e2e-chrome81:
     name: Run on Chrome 81
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
@@ -44,10 +44,11 @@ jobs:
       #     publish_dir: ./public
       #     user_name: 'github-actions[bot]'
       #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      
       - name: Install rsync 📚
         run: |
           apt-get update && apt-get install -y rsync
-
+          
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
