@@ -45,20 +45,11 @@ jobs:
       #     user_name: 'github-actions[bot]'
       #     user_email: 'github-actions[bot]@users.noreply.github.com'
       
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./public  
-
-      - name: Install rsync 📚
-        run: |
-          apt-get update && apt-get install -y rsync
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: main
-          folder: public
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  
+
+    
      
