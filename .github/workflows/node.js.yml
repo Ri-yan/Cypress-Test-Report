@@ -45,8 +45,11 @@ jobs:
       #     user_name: 'github-actions[bot]'
       #     user_email: 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          branch: main
+          folder: ./public
+          
+   
+   
